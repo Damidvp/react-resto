@@ -1,0 +1,23 @@
+tr {
+  font-size: 1.15em;
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  td {
+    img {
+      width: 15em;
+    }
+    .table-nom {
+      width: 10em;
+    }
+    .table-description {
+      width: 25em;
+    }
+    .table-prix {
+      width: 5em;
+    }
+    .table-button {
+      width: 5em;
+    }
+  }
+}

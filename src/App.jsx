@@ -9,6 +9,8 @@ import Carte from "./components/components-carte/Carte";
 import Localisation from "./components/components-localisation/Localisation";
 import { Helmet } from "react-helmet";
 
+import { PlatProvider } from "./utils/context/PlatContext";
+
 function App() {
   return (
     <div className="App">
@@ -20,7 +22,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/presentation" element={<Presentation />} />
-          <Route path="/carte" element={<Carte />} />
+          <Route
+            path="/carte"
+            element={
+              <PlatProvider>
+                <Carte />
+              </PlatProvider>
+            }
+          />
           <Route path="/localisation" element={<Localisation />} />
         </Routes>
         <Footer />

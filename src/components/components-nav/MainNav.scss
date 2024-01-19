@@ -1,22 +1,45 @@
 .nav-content {
   background-color: rgb(241, 179, 62);
-  ul {
+  display: flex;
+  justify-content: space-between;
+  .nav-content-links {
     display: flex;
     align-items: center;
-    gap: 5em;
-    margin-top: 0;
-    padding: 0.5em 0 0.5em 2em;
-    li {
-      list-style-type: none;
-      .nav-link {
-        text-decoration: none;
-        font-size: 1.2em;
-        font-weight: bold;
-        color: rgb(85, 39, 1);
-      }
-      img {
-        width: 5em;
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 5em;
+      margin: 0;
+      padding: 0.5em 0 0.5em 2em;
+      li {
+        list-style-type: none;
+        .nav-link {
+          text-decoration: none;
+          font-size: 1.2em;
+          font-weight: bold;
+          color: rgb(85, 39, 1);
+        }
+        img {
+          width: 5em;
+        }
       }
     }
+  }
+
+  .nav-cart {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    gap: 0.2em;
+    margin-right: 1em;
+    transition: color 0.2s;
+    img {
+      width: 1.6em;
+    }
+  }
+  .nav-cart:hover {
+    color: rgb(248, 226, 179);
+    cursor: pointer;
   }
 }
