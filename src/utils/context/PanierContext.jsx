@@ -8,6 +8,7 @@ export const PanierProvider = ({ children }) => {
 
   function addPlatCommande(plat) {
     platsCommande.push(plat);
+    setPlatsCommande(platsCommande);
     setNbPlatsCommande(nbPlatsCommande + 1);
     console.log(nbPlatsCommande);
   }
