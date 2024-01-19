@@ -1,15 +1,26 @@
 import "./Footer.scss";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <div className="footer-content">
-      <div className="footer-content-copyright">© Damidvp - 2024</div>
+      <div className="footer-content-copyright">
+        <p>© Damidvp - 2024</p>
+      </div>
       <div className="footer-content-links">
         <ul>
-          <li>Accueil</li>
-          <li>Présentation</li>
-          <li>Carte</li>
-          <li>Localisation</li>
+          <Link className="nav-link" to="/">
+            <li>Accueil</li>
+          </Link>
+          <Link className="nav-link" to="/presentation">
+            <li>Présentation</li>
+          </Link>
+          <Link className="nav-link" to="/carte">
+            <li>Carte</li>
+          </Link>
+          <Link className="nav-link" to="/localisation">
+            <li>Localisation</li>
+          </Link>
           <li>Plan du site</li>
         </ul>
       </div>

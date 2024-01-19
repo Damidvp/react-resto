@@ -1,3 +1,19 @@
 .ordershortcut-content {
   margin-bottom: 3em;
+  button {
+    border: none;
+    font-size: 1.3em;
+    background-color: rgb(241, 179, 62);
+    color: rgb(49, 28, 0);
+    padding: 1em;
+    border-radius: 1.5em 0.5em;
+
+    transition: border-radius 0.3s, color 0.3s, background-color 0.3s;
+  }
+  button:hover {
+    border-radius: 0.5em 1.5em;
+    cursor: pointer;
+    background-color: rgb(49, 28, 0);
+    color: antiquewhite;
+  }
 }

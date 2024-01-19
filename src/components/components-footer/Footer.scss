@@ -1,5 +1,26 @@
 .footer-content {
   display: flex;
   justify-content: center;
-  gap: 2em;
+  align-items: center;
+  gap: 5em;
+  background-color: rgb(49, 28, 0);
+  color: antiquewhite;
+  .footer-content-copyright {
+    height: 100%;
+    border-right: 0.1em antiquewhite solid;
+    padding-right: 2em;
+  }
+  ul {
+    .nav-link {
+      text-decoration: none;
+      color: antiquewhite;
+    }
+    .nav-link:hover {
+      color: rgb(255, 252, 246);
+    }
+    li {
+      text-align: left;
+      list-style-type: none;
+    }
+  }
 }

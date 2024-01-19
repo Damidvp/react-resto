@@ -31,15 +31,17 @@ function MainNav() {
           </li>
         </ul>
       </div>
-      <div className="nav-cart">
-        <div>
-          <img
-            src="https://cdn-icons-png.freepik.com/128/2838/2838895.png"
-            alt="Panier"
-          />
+      <Link className="nav-link-panier" to="/panier">
+        <div className="nav-cart">
+          <div>
+            <img
+              src="https://cdn-icons-png.freepik.com/128/2838/2838895.png"
+              alt="Panier"
+            />
+          </div>
+          <span>(0)</span>
         </div>
-        <span>(0)</span>
-      </div>
+      </Link>
     </div>
   );
 }

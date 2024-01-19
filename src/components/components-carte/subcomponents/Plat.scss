@@ -6,6 +6,7 @@ tr {
   td {
     img {
       width: 15em;
+      border-radius: 1em 3em;
     }
     .table-nom {
       width: 10em;
@@ -16,8 +17,21 @@ tr {
     .table-prix {
       width: 5em;
     }
-    .table-button {
-      width: 5em;
+    .table-addbutton {
+      width: 8em;
+      button {
+        border: none;
+        background-color: rgb(49, 28, 0);
+        color: antiquewhite;
+        padding: 0.5em;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      button:active {
+        color: rgb(49, 28, 0);
+        background-color: rgb(241, 179, 62);
+      }
     }
   }
 }

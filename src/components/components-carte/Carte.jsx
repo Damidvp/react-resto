@@ -10,6 +10,12 @@ function Carte() {
   return (
     <div className="carte-content">
       <h1>Ce que nous proposons...</h1>
+      <span className="carte-content-livraison">
+        <p>
+          Profitez de notre service de livraison à dos de chocobo sur la commune
+          de Montpellier et aux alentours !
+        </p>
+      </span>
       <table>
         <tbody>
           {listOfPlats.map((plat) => (

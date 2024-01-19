@@ -7,6 +7,7 @@ import Footer from "./components/components-footer/Footer";
 import Presentation from "./components/components-presentation/Presentation";
 import Carte from "./components/components-carte/Carte";
 import Localisation from "./components/components-localisation/Localisation";
+import Panier from "./components/components-panier/Panier";
 import { Helmet } from "react-helmet";
 
 import { PlatProvider } from "./utils/context/PlatContext";
@@ -31,6 +32,7 @@ function App() {
             }
           />
           <Route path="/localisation" element={<Localisation />} />
+          <Route path="/panier" element={<Panier />} />
         </Routes>
         <Footer />
       </Router>
