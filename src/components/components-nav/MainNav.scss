@@ -1,0 +1,16 @@
+.nav-content {
+  background-color: rgb(241, 179, 62);
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+    margin-top: 0;
+    padding: 1em 0 1em 2em;
+    li {
+      list-style-type: none;
+      img {
+        width: 5em;
+      }
+    }
+  }
+}
