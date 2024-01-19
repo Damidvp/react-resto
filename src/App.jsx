@@ -11,6 +11,7 @@ import Panier from "./components/components-panier/Panier";
 import { Helmet } from "react-helmet";
 
 import { PlatProvider } from "./utils/context/PlatContext";
+import { PanierProvider } from "./utils/context/PanierContext";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         <title>Big Fat Tacos</title>
       </Helmet>
       <Router>
-        <MainNav />
+        <PanierProvider>
+          <MainNav />
+        </PanierProvider>
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/presentation" element={<Presentation />} />

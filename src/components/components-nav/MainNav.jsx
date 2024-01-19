@@ -1,7 +1,10 @@
 import "./MainNav.scss";
 import { Link } from "react-router-dom";
+import { PanierContext } from "../../utils/context/PanierContext";
+import { useContext } from "react";
 
 function MainNav() {
+  const { nbPlatsCommande } = useContext(PanierContext);
   return (
     <div className="nav-content">
       <div className="nav-content-links">
@@ -39,7 +42,7 @@ function MainNav() {
               alt="Panier"
             />
           </div>
-          <span>(0)</span>
+          <span>({nbPlatsCommande})</span>
         </div>
       </Link>
     </div>

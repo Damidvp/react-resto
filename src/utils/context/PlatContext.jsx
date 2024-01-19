@@ -9,7 +9,6 @@ export const PlatProvider = ({ children }) => {
   useEffect(() => {
     setListOfPlats(recipes);
   }, [recipes]);
-  console.log(listOfPlats);
 
   return (
     <PlatContext.Provider value={{ listOfPlats }}>

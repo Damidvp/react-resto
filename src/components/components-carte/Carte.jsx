@@ -1,6 +1,7 @@
 import "./Carte.scss";
 import { useContext } from "react";
 import { PlatContext } from "../../utils/context/PlatContext";
+import { PanierProvider } from "../../utils/context/PanierContext";
 
 import Plat from "./subcomponents/Plat";
 
@@ -18,9 +19,11 @@ function Carte() {
       </span>
       <table>
         <tbody>
-          {listOfPlats.map((plat) => (
-            <Plat key={plat.id} plat={plat} />
-          ))}
+          <PanierProvider>
+            {listOfPlats.map((plat) => (
+              <Plat key={plat.id} plat={plat} />
+            ))}
+          </PanierProvider>
         </tbody>
       </table>
     </div>
