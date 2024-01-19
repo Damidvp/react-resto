@@ -29,6 +29,14 @@ function Presentation() {
         incontournable, élevant la réputation du restaurant à des sommets
         délicieux.
       </p>
+      <p>
+        Nous vous invitons à plonger dans l'univers culinaire unique de Big Fat
+        Tacos, où chaque taco est une œuvre d'art gustative. Venez découvrir les
+        saveurs authentiques du Mexique, savourer des combinaisons audacieuses
+        et vivre une expérience gastronomique mémorable. Que vous soyez amateur
+        de tacos ou simplement en quête d'une aventure culinaire, Big Fat Tacos
+        vous promet un festin délicieux.
+      </p>
     </div>
   );
 }
