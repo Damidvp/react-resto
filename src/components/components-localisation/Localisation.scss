@@ -1,0 +1,12 @@
+.localisation-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  .localisation-content-map {
+    margin-bottom: 2em;
+    .map {
+      height: 60em;
+      width: 100em;
+    }
+  }
+}

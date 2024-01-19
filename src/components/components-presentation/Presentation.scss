@@ -1,0 +1,9 @@
+.presentation-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  p {
+    width: 70%;
+    font-size: 1.4em;
+  }
+}

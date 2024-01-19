@@ -1,3 +1,5 @@
+import "./Carte.scss";
+
 function Carte() {
   return (
     <div className="carte-content">

@@ -11,6 +11,8 @@ function Slider() {
         interval={3000}
         infiniteLoop={true}
         stopOnHover={true}
+        showArrows={false}
+        showStatus={false}
       >
         <div>
           <img

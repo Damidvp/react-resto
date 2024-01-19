@@ -7,10 +7,14 @@ import Footer from "./components/components-footer/Footer";
 import Presentation from "./components/components-presentation/Presentation";
 import Carte from "./components/components-carte/Carte";
 import Localisation from "./components/components-localisation/Localisation";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <div className="App">
+      <Helmet>
+        <title>Big Fat Tacos</title>
+      </Helmet>
       <Router>
         <MainNav />
         <Routes>
