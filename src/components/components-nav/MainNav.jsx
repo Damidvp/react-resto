@@ -13,9 +13,21 @@ function MainNav() {
             />
           </Link>
         </li>
-        <li>Présentation</li>
-        <li>Carte</li>
-        <li>Localisation</li>
+        <li>
+          <Link className="nav-link" to="/presentation">
+            Présentation
+          </Link>
+        </li>
+        <li>
+          <Link className="nav-link" to="/carte">
+            Carte
+          </Link>
+        </li>
+        <li>
+          <Link className="nav-link" to="/localisation">
+            Localisation
+          </Link>
+        </li>
       </ul>
     </div>
   );
