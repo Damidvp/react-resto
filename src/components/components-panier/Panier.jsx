@@ -28,6 +28,9 @@ function Panier() {
                     {plat.prix.toFixed(2)} €
                   </div>
                 </td>
+                <td>
+                  <button>Supprimer</button>
+                </td>
               </tr>
             ))}
           </table>
