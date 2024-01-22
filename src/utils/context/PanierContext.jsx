@@ -8,17 +8,41 @@ export const PanierProvider = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   function addPlatCommande(plat) {
-    platsCommande.push(plat);
+    const existingPlat = platsCommande.find((p) => p.plat.id === plat.id);
+    if (existingPlat) {
+      existingPlat.qte += 1;
+    } else {
+      platsCommande.push({
+        plat: plat,
+        id: platsCommande[platsCommande.length - 1] + 1,
+        qte: 1,
+      });
+    }
+    console.log(platsCommande);
     setPlatsCommande(platsCommande);
+    setNbPlatsCommande(platsCommande.length);
+  }
+
+  function removePlatCommande(platCommande) {
+    platCommande.qte--;
+    if (platCommande.qte < 1) {
+      setPlatsCommande(platsCommande.filter((p) => p.qte !== 0));
+      setNbPlatsCommande(platsCommande.length);
+    }
+    setNbPlats();
   }
 
   function setNbPlats() {
-    setNbPlatsCommande(platsCommande.length);
+    let nbPlatsTotal = 0;
+    platsCommande.forEach((plat) => (nbPlatsTotal += plat.qte));
+    setNbPlatsCommande(nbPlatsTotal);
     calculateTotalPrice();
   }
 
   function calculateTotalPrice() {
-    platsCommande.forEach((plat) => setTotalPrice(totalPrice + plat.prix));
+    let price = 0;
+    platsCommande.forEach((plat) => (price += plat.plat.prix * plat.qte));
+    setTotalPrice(price);
     console.log(totalPrice);
   }
 
@@ -30,6 +54,7 @@ export const PanierProvider = ({ children }) => {
         totalPrice,
         addPlatCommande: addPlatCommande,
         setNbPlats: setNbPlats,
+        removePlatCommande: removePlatCommande,
       }}
     >
       {children}
