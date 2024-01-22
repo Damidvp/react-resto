@@ -1,0 +1,30 @@
+.login-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 3em;
+  .login-content-fields {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    .login-content-field {
+      display: flex;
+      justify-content: space-between;
+      gap: 2em;
+    }
+    button {
+      border: none;
+      background-color: rgb(98, 131, 238);
+      color: rgb(239, 242, 255);
+      font-size: 1.25em;
+      padding: 0.3em;
+      border-radius: 0.5em;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+    .login-error {
+      color: rgb(212, 13, 13);
+    }
+  }
+}

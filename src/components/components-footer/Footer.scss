@@ -23,4 +23,13 @@
       list-style-type: none;
     }
   }
+  .footer-content-admin {
+    .nav-link {
+      text-decoration: none;
+      color: antiquewhite;
+    }
+    .nav-link:hover {
+      color: rgb(255, 252, 246);
+    }
+  }
 }

@@ -26,7 +26,11 @@ function Footer() {
           </Link>
         </ul>
       </div>
-      <div className="footer-content-admin">Gestion stock</div>
+      <div className="footer-content-admin">
+        <Link className="nav-link" to="/gestion/login">
+          Gestion stock
+        </Link>
+      </div>
     </div>
   );
 }

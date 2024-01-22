@@ -30,7 +30,8 @@ function Localisation() {
             }
           >
             <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
+              <strong>Big Fat Tacos</strong> <br /> Rue de la République <br />{" "}
+              34000 Montpellier
             </Popup>
           </Marker>
         </MapContainer>
