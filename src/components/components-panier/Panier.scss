@@ -10,6 +10,27 @@
     img {
       width: 10em;
     }
+    table {
+      .panier-content-name,
+      .panier-content-qty,
+      .panier-content.price {
+        width: 8em;
+      }
+      button {
+        border: none;
+        background-color: rgb(117, 10, 10);
+        color: antiquewhite;
+        font-size: 1.2em;
+        width: 1.5em;
+        height: 1.5em;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      button:active {
+        background-color: rgb(243, 151, 151);
+      }
+    }
     .panier-content-form {
       form {
         display: flex;
