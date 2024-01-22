@@ -1,5 +1,4 @@
 import "./ListePlatsAdmin.scss";
-import { Link } from "react-router-dom";
 
 function ListePlatsAdmin() {
   return (

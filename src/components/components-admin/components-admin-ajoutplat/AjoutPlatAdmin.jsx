@@ -1,5 +1,4 @@
 import "./AjoutPlatAdmin.scss";
-import { Link } from "react-router-dom";
 
 function AjoutPlatAdmin() {
   return (
