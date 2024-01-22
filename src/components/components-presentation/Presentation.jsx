@@ -4,6 +4,7 @@ function Presentation() {
   return (
     <div className="presentation-content">
       <h1>Notre histoire</h1>
+      <img src="/img/graha.png" alt="G'raha Tia" />
       <p>
         Au cœur de Montpellier, une perle gastronomique connue sous le nom de
         "Big Fat Tacos" offre une expérience culinaire inégalée. La renommée du

@@ -46,6 +46,12 @@ export const PanierProvider = ({ children }) => {
     console.log(totalPrice);
   }
 
+  function resetPanier() {
+    setPlatsCommande([]);
+    setNbPlatsCommande(0);
+    setTotalPrice(0);
+  }
+
   return (
     <PanierContext.Provider
       value={{
@@ -55,6 +61,7 @@ export const PanierProvider = ({ children }) => {
         addPlatCommande: addPlatCommande,
         setNbPlats: setNbPlats,
         removePlatCommande: removePlatCommande,
+        resetPanier: resetPanier,
       }}
     >
       {children}

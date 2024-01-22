@@ -12,6 +12,8 @@ import { Helmet } from "react-helmet";
 
 import { PlatProvider } from "./utils/context/PlatContext";
 import { PanierProvider } from "./utils/context/PanierContext";
+import PlanSite from "./components/components-plansite/PlanSite";
+import Validation from "./components/components-panier/subcomponents/Validation";
 
 function App() {
   return (
@@ -36,6 +38,11 @@ function App() {
             />
             <Route path="/localisation" element={<Localisation />} />
             <Route path="/panier" element={<Panier />} />
+            <Route
+              path="/panier/validation/:destinataire"
+              element={<Validation />}
+            />
+            <Route path="/plan" element={<PlanSite />} />
           </Routes>
           <Footer />
         </Router>

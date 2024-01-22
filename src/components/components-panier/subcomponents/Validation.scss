@@ -1,0 +1,17 @@
+.validation-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  .validation-content-message {
+    font-size: 1.3em;
+    width: 50em;
+  }
+  .validation-content-destination {
+    margin: 2em 0;
+
+    .validation-content-destination-name {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+  }
+}

@@ -21,7 +21,9 @@ function Footer() {
           <Link className="nav-link" to="/localisation">
             <li>Localisation</li>
           </Link>
-          <li>Plan du site</li>
+          <Link className="nav-link" to="/plan">
+            <li>Plan du site</li>
+          </Link>
         </ul>
       </div>
       <div className="footer-content-admin">Gestion stock</div>
