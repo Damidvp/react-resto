@@ -10,7 +10,7 @@ export function useFetchPlatData(url = "") {
         if (res.ok) {
           const dataReceived = await res.json();
           if (dataReceived) {
-            setData(dataReceived);
+            setData(dataReceived.plats);
           } else {
             console.error("Data not found");
           }
