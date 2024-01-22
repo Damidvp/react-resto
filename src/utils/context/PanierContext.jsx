@@ -5,6 +5,7 @@ export const PanierContext = createContext();
 export const PanierProvider = ({ children }) => {
   const [platsCommande, setPlatsCommande] = useState([]);
   const [nbPlatsCommande, setNbPlatsCommande] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   function addPlatCommande(plat) {
     platsCommande.push(plat);
@@ -13,7 +14,12 @@ export const PanierProvider = ({ children }) => {
 
   function setNbPlats() {
     setNbPlatsCommande(platsCommande.length);
-    console.log(nbPlatsCommande);
+    calculateTotalPrice();
+  }
+
+  function calculateTotalPrice() {
+    platsCommande.forEach((plat) => setTotalPrice(totalPrice + plat.prix));
+    console.log(totalPrice);
   }
 
   return (
@@ -21,6 +27,7 @@ export const PanierProvider = ({ children }) => {
       value={{
         platsCommande,
         nbPlatsCommande,
+        totalPrice,
         addPlatCommande: addPlatCommande,
         setNbPlats: setNbPlats,
       }}

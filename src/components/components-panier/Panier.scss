@@ -1,0 +1,58 @@
+.panier-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  .panier-content-display {
+    margin-bottom: 4em;
+    .no-content {
+      font-size: 1.4em;
+    }
+    img {
+      width: 10em;
+    }
+    .panier-content-form {
+      form {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1em;
+        div {
+          display: flex;
+          justify-content: space-between;
+          input,
+          textarea {
+            width: 22em;
+          }
+          textarea {
+            height: 10em;
+          }
+        }
+      }
+    }
+    .panier-content-total {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2em;
+      font-size: 1.5em;
+      p {
+        font-weight: bold;
+      }
+      div {
+        button {
+          border: none;
+          background-color: rgb(241, 179, 62);
+          color: rgb(85, 39, 1);
+          padding: 0.5em;
+          font-size: 0.85em;
+          border-radius: 0.5em;
+          transition: background-color 0.2s, color 0.2s;
+        }
+        button:hover {
+          cursor: pointer;
+          background-color: rgb(85, 39, 1);
+          color: rgb(241, 179, 62);
+        }
+      }
+    }
+  }
+}

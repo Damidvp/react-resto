@@ -1,7 +1,6 @@
 import "./Carte.scss";
 import { useContext } from "react";
 import { PlatContext } from "../../utils/context/PlatContext";
-import { PanierProvider } from "../../utils/context/PanierContext";
 
 import Plat from "./subcomponents/Plat";
 
