@@ -9,7 +9,10 @@ export const PanierProvider = ({ children }) => {
   function addPlatCommande(plat) {
     platsCommande.push(plat);
     setPlatsCommande(platsCommande);
-    setNbPlatsCommande(nbPlatsCommande + 1);
+  }
+
+  function setNbPlats() {
+    setNbPlatsCommande(platsCommande.length);
     console.log(nbPlatsCommande);
   }
 
@@ -19,6 +22,7 @@ export const PanierProvider = ({ children }) => {
         platsCommande,
         nbPlatsCommande,
         addPlatCommande: addPlatCommande,
+        setNbPlats: setNbPlats,
       }}
     >
       {children}

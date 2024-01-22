@@ -19,11 +19,9 @@ function Carte() {
       </span>
       <table>
         <tbody>
-          <PanierProvider>
-            {listOfPlats.map((plat) => (
-              <Plat key={plat.id} plat={plat} />
-            ))}
-          </PanierProvider>
+          {listOfPlats.map((plat) => (
+            <Plat key={plat.id} plat={plat} />
+          ))}
         </tbody>
       </table>
     </div>

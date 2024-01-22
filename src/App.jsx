@@ -19,26 +19,27 @@ function App() {
       <Helmet>
         <title>Big Fat Tacos</title>
       </Helmet>
-      <Router>
-        <PanierProvider>
+      <PanierProvider>
+        <Router>
           <MainNav />
-        </PanierProvider>
-        <Routes>
-          <Route path="/" element={<Accueil />} />
-          <Route path="/presentation" element={<Presentation />} />
-          <Route
-            path="/carte"
-            element={
-              <PlatProvider>
-                <Carte />
-              </PlatProvider>
-            }
-          />
-          <Route path="/localisation" element={<Localisation />} />
-          <Route path="/panier" element={<Panier />} />
-        </Routes>
-        <Footer />
-      </Router>
+
+          <Routes>
+            <Route path="/" element={<Accueil />} />
+            <Route path="/presentation" element={<Presentation />} />
+            <Route
+              path="/carte"
+              element={
+                <PlatProvider>
+                  <Carte />
+                </PlatProvider>
+              }
+            />
+            <Route path="/localisation" element={<Localisation />} />
+            <Route path="/panier" element={<Panier />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </PanierProvider>
     </div>
   );
 }
