@@ -8,34 +8,35 @@
     gap: 0.5em;
     margin-bottom: 3em;
     thead {
+      display: flex;
       th {
         text-align: left;
         padding: 0 1em;
-      }
-      .table-head-name {
-        display: flex;
-        gap: 0.5em;
-        width: 10em;
-        font-weight: bold;
-        button {
-          border: none;
-          background-color: white;
+        .table-head-name {
+          display: flex;
+          gap: 0.5em;
+          width: 10em;
+          font-weight: bold;
+          button {
+            border: none;
+            background-color: white;
+          }
+          button:hover {
+            cursor: pointer;
+          }
         }
-        button:hover {
-          cursor: pointer;
+        .table-head-description {
+          width: 20em;
         }
-      }
-      .table-head-description {
-        width: 20em;
-      }
-      .table-head-country {
-        width: 8em;
-      }
-      .table-head-category {
-        width: 8em;
-      }
-      .table-head-price {
-        width: 5em;
+        .table-head-country {
+          width: 8em;
+        }
+        .table-head-category {
+          width: 8em;
+        }
+        .table-head-price {
+          width: 5em;
+        }
       }
     }
     tbody {

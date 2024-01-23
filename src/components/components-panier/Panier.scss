@@ -4,13 +4,15 @@
   align-items: center;
   .panier-content-display {
     margin-bottom: 4em;
-    .no-content {
-      font-size: 1.4em;
-    }
-    .panier-content-img {
-      width: 10em;
-    }
-    table {
+
+    .panier-content-table {
+      .no-content {
+        font-size: 1.4em;
+      }
+      .panier-content-img {
+        width: 10em;
+        border-radius: 1em 2em;
+      }
       .panier-content-name,
       .panier-content-qty,
       .panier-content.price {

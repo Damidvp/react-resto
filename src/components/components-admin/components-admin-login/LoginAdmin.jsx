@@ -5,22 +5,6 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 
 function LoginAdmin() {
-  /*
-  const createAdminAccount = async (email, pwd) => {
-    try {
-      const adminCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        pwd
-      );
-      const admin = adminCredential.user;
-      return admin;
-    } catch (e) {
-      console.error("Erreur compte admin : ", e.message);
-    }
-  };
-  createAdminAccount("supervisor@gmail.com", "supervisor");
-*/
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isCorrect, setIsCorrect] = useState(true);

@@ -46,7 +46,9 @@ function ListePlatsAdmin() {
           <th>
             <div className="table-head-price">Prix</div>
           </th>
-          <th></th>
+          <th>
+            <div>Actions</div>
+          </th>
         </thead>
         <tbody>
           {listOfPlats.map((plat) => (

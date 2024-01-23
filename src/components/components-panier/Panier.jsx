@@ -12,7 +12,7 @@ function Panier() {
       <h1>Mon panier</h1>
       {platsCommande.length > 0 ? (
         <div className="panier-content-display">
-          <table>
+          <table className="panier-content-table">
             <tbody>
               {platsCommande.map((plat) => (
                 <tr key={plat.plat.id}>
