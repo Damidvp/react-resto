@@ -38,64 +38,66 @@ function App() {
       </Helmet>
       <PanierProvider>
         <Router>
-          <MainNav />
+          <div className="App-main-content">
+            <MainNav />
 
-          <Routes>
-            <Route path="/" element={<Accueil />} />
-            <Route path="/presentation" element={<Presentation />} />
-            <Route
-              path="/carte"
-              element={
-                <PlatProvider>
-                  <Carte />
-                </PlatProvider>
-              }
-            />
-            <Route path="/localisation" element={<Localisation />} />
-            <Route path="/panier" element={<Panier />} />
-            <Route
-              path="/panier/validation/:destinataire"
-              element={<Validation />}
-            />
-            <Route path="/gestion/login" element={<LoginAdmin />} />
-            <Route path="/plan" element={<PlanSite />} />
-            <Route
-              path="/gestion/liste-plats"
-              element={
-                currentUser ? (
+            <Routes>
+              <Route path="/" element={<Accueil />} />
+              <Route path="/presentation" element={<Presentation />} />
+              <Route
+                path="/carte"
+                element={
                   <PlatProvider>
-                    <ListePlatsAdmin />
+                    <Carte />
                   </PlatProvider>
-                ) : (
-                  <Navigate to="/" />
-                )
-              }
-            />
-            <Route
-              path="/gestion/ajout-plat"
-              element={
-                currentUser ? (
-                  <PlatProvider>
-                    <AjoutPlatAdmin />
-                  </PlatProvider>
-                ) : (
-                  <Navigate to="/" />
-                )
-              }
-            />
-            <Route
-              path="/gestion/update-plat/:id"
-              element={
-                currentUser ? (
-                  <PlatProvider>
-                    <UpdatePlatAdmin />
-                  </PlatProvider>
-                ) : (
-                  <Navigate to="/" />
-                )
-              }
-            />
-          </Routes>
+                }
+              />
+              <Route path="/localisation" element={<Localisation />} />
+              <Route path="/panier" element={<Panier />} />
+              <Route
+                path="/panier/validation/:destinataire"
+                element={<Validation />}
+              />
+              <Route path="/gestion/login" element={<LoginAdmin />} />
+              <Route path="/plan" element={<PlanSite />} />
+              <Route
+                path="/gestion/liste-plats"
+                element={
+                  currentUser ? (
+                    <PlatProvider>
+                      <ListePlatsAdmin />
+                    </PlatProvider>
+                  ) : (
+                    <Navigate to="/" />
+                  )
+                }
+              />
+              <Route
+                path="/gestion/ajout-plat"
+                element={
+                  currentUser ? (
+                    <PlatProvider>
+                      <AjoutPlatAdmin />
+                    </PlatProvider>
+                  ) : (
+                    <Navigate to="/" />
+                  )
+                }
+              />
+              <Route
+                path="/gestion/update-plat/:id"
+                element={
+                  currentUser ? (
+                    <PlatProvider>
+                      <UpdatePlatAdmin />
+                    </PlatProvider>
+                  ) : (
+                    <Navigate to="/" />
+                  )
+                }
+              />
+            </Routes>
+          </div>
           <Footer />
         </Router>
       </PanierProvider>

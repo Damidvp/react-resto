@@ -20,7 +20,7 @@ function Slider() {
         showStatus={false}
       >
         {carouselElements.map((element) => (
-          <div>
+          <div key={element.id}>
             <img src={element.photo} alt={element.nom} />
             <p className="legend">{element.nom}</p>
           </div>

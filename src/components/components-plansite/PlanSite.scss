@@ -1,0 +1,33 @@
+.plansite-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 3em;
+  ul {
+    width: 30%;
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    .link-plan,
+    .link-plan-admin {
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .link-plan {
+      color: rgb(66, 38, 5);
+    }
+    .link-plan-admin {
+      color: rgb(155, 30, 8);
+    }
+    .link-plan:hover,
+    .link-plan-admin:hover {
+      color: rgb(214, 130, 19);
+    }
+    li {
+      list-style-type: none;
+      text-align: left;
+      font-size: 1.6em;
+    }
+  }
+}

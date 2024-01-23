@@ -66,6 +66,12 @@ function LoginAdmin() {
         <div>
           <button onClick={handleLogin}>Connexion</button>
         </div>
+        <div className="login-content-message">
+          <p>
+            Attention, cette partie du site est exclusivement réservée au
+            personnel de Big Fat Tacos.
+          </p>
+        </div>
       </div>
     </div>
   );

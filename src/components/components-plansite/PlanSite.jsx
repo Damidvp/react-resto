@@ -6,17 +6,20 @@ function PlanSite() {
     <div className="plansite-content">
       <h1>Plan du site</h1>
       <ul>
-        <Link to="/">
+        <Link className="link-plan" to="/">
           <li>Accueil</li>
         </Link>
-        <Link to="/presentation">
+        <Link className="link-plan" to="/presentation">
           <li>Présentation</li>
         </Link>
-        <Link to="/carte">
+        <Link className="link-plan" to="/carte">
           <li>Carte</li>
         </Link>
-        <Link to="/localisation">
+        <Link className="link-plan" to="/localisation">
           <li>Localisation</li>
+        </Link>
+        <Link className="link-plan-admin" to="/gestion/login">
+          <li>Gestion stock</li>
         </Link>
       </ul>
     </div>
