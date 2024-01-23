@@ -9,7 +9,7 @@ function Plat(props) {
     setNbPlats();
   };
   return (
-    <tr>
+    <tr className="table-row-carte">
       <td>
         <div>
           <img src={props.plat.photo} alt={props.plat.nom} />

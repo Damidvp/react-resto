@@ -19,6 +19,22 @@ export const PlatProvider = ({ children }) => {
     await recipes.updData(plat);
   }
 
+  function sortListOfPlats(isAsc) {
+    if (isAsc) {
+      setListOfPlats(
+        [...listOfPlats].sort((a, b) => a.nom.localeCompare(b.nom))
+      );
+    } else {
+      setListOfPlats(
+        [...listOfPlats].sort((a, b) => b.nom.localeCompare(a.nom))
+      );
+    }
+  }
+
+  function resetListOfPlats() {
+    setListOfPlats(recipes.data);
+  }
+
   useEffect(() => {
     setListOfPlats(recipes.data);
   }, [recipes.data]);
@@ -30,6 +46,8 @@ export const PlatProvider = ({ children }) => {
         deletePlat: deletePlat,
         addPlat: addPlat,
         updPlat: updPlat,
+        sortListOfPlats: sortListOfPlats,
+        resetListOfPlats: resetListOfPlats,
       }}
     >
       {children}

@@ -1,11 +1,15 @@
 import "./Carte.scss";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { PlatContext } from "../../utils/context/PlatContext";
 
 import Plat from "./subcomponents/Plat";
 
 function Carte() {
-  const { listOfPlats } = useContext(PlatContext);
+  const { listOfPlats, resetListOfPlats } = useContext(PlatContext);
+
+  useEffect(() => {
+    resetListOfPlats();
+  }, [resetListOfPlats]);
 
   return (
     <div className="carte-content">
