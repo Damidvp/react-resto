@@ -1,8 +1,19 @@
 import "./Plat.scss";
+import { PlatContext } from "../../../../utils/context/PlatContext";
+import { useContext } from "react";
 
 function Plat(props) {
+  const { deletePlat } = useContext(PlatContext);
+  const handleDeleteButton = (plat) => {
+    let confirmation = window.confirm(
+      "Voulez-vous supprimer ce plat : " + plat.id + " (" + plat.nom + ") ?"
+    );
+    if (confirmation) {
+      deletePlat(plat);
+    }
+  };
   return (
-    <tr>
+    <tr className="table-row">
       <td>
         <div className="table-body-name">{props.plat.nom}</div>
       </td>
@@ -21,7 +32,12 @@ function Plat(props) {
       <td>
         <div className="table-body-actions">
           <button className="btn-update">Modifier</button>
-          <button className="btn-delete">Supprimer</button>
+          <button
+            className="btn-delete"
+            onClick={() => handleDeleteButton(props.plat)}
+          >
+            Supprimer
+          </button>
         </div>
       </td>
     </tr>

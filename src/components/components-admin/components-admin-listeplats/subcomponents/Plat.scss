@@ -1,4 +1,4 @@
-tr {
+.table-row {
   display: flex;
   justify-content: space-between;
   padding: 1em 0;
@@ -17,6 +17,9 @@ tr {
     }
     .table-body-category {
       width: 8em;
+    }
+    .table-body-price {
+      width: 5em;
     }
     .table-body-actions {
       display: flex;
@@ -50,9 +53,9 @@ tr {
     }
   }
 }
-tr:nth-child(odd) {
+.table-row:nth-child(odd) {
   background-color: antiquewhite;
 }
-tr:nth-child(even) {
+.table-row:nth-child(even) {
   background-color: rgb(243, 181, 65);
 }

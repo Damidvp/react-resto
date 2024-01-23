@@ -1,26 +1,38 @@
 import { useEffect, useState } from "react";
+import { database } from "../../firebase";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 
-export function useFetchPlatData(url = "") {
+export function useFetchPlatData() {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    async function getPlats() {
-      const res = await fetch(url);
-      try {
-        if (res.ok) {
-          const dataReceived = await res.json();
-          if (dataReceived) {
-            setData(dataReceived.plats);
-          } else {
-            console.error("Data not found");
-          }
-        }
-      } catch (e) {
-        console.error("Cannot get data");
-      }
+  const fetchData = async () => {
+    try {
+      const platCollection = collection(database, "plats");
+      const snapshot = await getDocs(platCollection);
+      const platData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        plats: doc.data().plats,
+      }));
+      setData(platData[0].plats);
+    } catch (e) {
+      console.error("Erreur lors du GET : ", e);
     }
-    getPlats();
-  }, [url]);
+  };
 
-  return data;
+  const addData = async (platToAdd) => {
+    try {
+      const platCollection = collection(database, "plats");
+      const docRef = await addDoc(platCollection, platToAdd);
+      platToAdd.id = docRef.id;
+      setData((prevData) => [...prevData, platToAdd]);
+    } catch (e) {
+      console.error("Erreur lors du POST : ", e);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return { data, addData };
 }
