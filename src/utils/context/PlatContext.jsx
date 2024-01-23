@@ -8,12 +8,11 @@ export const PlatProvider = ({ children }) => {
   const [listOfPlats, setListOfPlats] = useState([]);
 
   async function deletePlat(plat) {
-    setListOfPlats(listOfPlats.filter((p) => plat.id !== p.id));
+    await recipes.delData(plat);
   }
 
   async function addPlat(plat) {
     await recipes.addData(plat);
-    console.log(plat);
   }
 
   useEffect(() => {

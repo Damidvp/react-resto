@@ -11,7 +11,7 @@ function AjoutPlatAdmin() {
   const [descriptionPlat, setDescriptionPlat] = useState("");
   const [urlPhotoPlat, setUrlPhotoPlat] = useState("");
   const [paysPlat, setPaysPlat] = useState("");
-  const [categoriePlat, setCategoriePlat] = useState("");
+  const [categoriePlat, setCategoriePlat] = useState("Entrée");
   const [prixPlat, setPrixPlat] = useState(0);
 
   const commitPlat = (e) => {

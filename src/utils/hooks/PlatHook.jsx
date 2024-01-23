@@ -1,13 +1,21 @@
 import { useEffect, useState } from "react";
 import { database } from "../../firebase";
-import { addDoc, collection, getDocs } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
+
+const doc_id = "FGrvGR8A7djFpR5qhEjg";
+const platCollection = collection(database, "plats");
 
 export function useFetchPlatData() {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
-      const platCollection = collection(database, "plats");
       const snapshot = await getDocs(platCollection);
       const platData = snapshot.docs.map((doc) => ({
         id: doc.id,
@@ -21,12 +29,36 @@ export function useFetchPlatData() {
 
   const addData = async (platToAdd) => {
     try {
-      const platCollection = collection(database, "plats");
-      const docRef = await addDoc(platCollection, platToAdd);
-      platToAdd.id = docRef.id;
-      setData((prevData) => [...prevData, platToAdd]);
+      const docRef = doc(platCollection, doc_id);
+      const docSnapshot = await getDoc(docRef);
+
+      if (docSnapshot.exists()) {
+        platToAdd.id = docRef.id;
+        platToAdd.prix = parseFloat(platToAdd.prix);
+        const updatedPlats = [...docSnapshot.data().plats, platToAdd];
+        await updateDoc(docRef, { plats: updatedPlats });
+      }
+      fetchData();
     } catch (e) {
       console.error("Erreur lors du POST : ", e);
+    }
+  };
+
+  const updData = async (platToUpd) => {};
+
+  const delData = async (platToDel) => {
+    try {
+      const docRef = doc(platCollection, doc_id);
+      const docSnapshot = await getDoc(docRef);
+      if (docSnapshot.exists()) {
+        const updatedPlats = docSnapshot
+          .data()
+          .plats.filter((p) => p.id !== platToDel.id);
+        await updateDoc(docRef, { plats: updatedPlats });
+      }
+      fetchData();
+    } catch (e) {
+      console.error("Erreur lors du DELETE : ", e);
     }
   };
 
@@ -34,5 +66,5 @@ export function useFetchPlatData() {
     fetchData();
   }, []);
 
-  return { data, addData };
+  return { data, addData, updData, delData };
 }

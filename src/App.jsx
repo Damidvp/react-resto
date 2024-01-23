@@ -25,9 +25,11 @@ import { AuthContext } from "./utils/context/AuthContext";
 import { useContext } from "react";
 import ListePlatsAdmin from "./components/components-admin/components-admin-listeplats/ListePlatsAdmin";
 import AjoutPlatAdmin from "./components/components-admin/components-admin-ajoutplat/AjoutPlatAdmin";
+//import { firebaseData } from "./firebase";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
+  //firebaseData.setData();
   return (
     <div className="App">
       <Helmet>
