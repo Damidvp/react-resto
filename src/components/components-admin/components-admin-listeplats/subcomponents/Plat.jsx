@@ -1,6 +1,7 @@
 import "./Plat.scss";
 import { PlatContext } from "../../../../utils/context/PlatContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 function Plat(props) {
   const { deletePlat } = useContext(PlatContext);
@@ -15,7 +16,9 @@ function Plat(props) {
   return (
     <tr className="table-row">
       <td>
-        <div className="table-body-name">{props.plat.nom}</div>
+        <Link className="link" to={"/gestion/update-plat/" + props.plat.id}>
+          <div className="table-body-name">{props.plat.nom}</div>
+        </Link>
       </td>
       <td>
         <div className="table-body-description">{props.plat.description}</div>
@@ -31,7 +34,6 @@ function Plat(props) {
       </td>
       <td>
         <div className="table-body-actions">
-          <button className="btn-update">Modifier</button>
           <button
             className="btn-delete"
             onClick={() => handleDeleteButton(props.plat)}

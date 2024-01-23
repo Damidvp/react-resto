@@ -15,13 +15,22 @@ export const PlatProvider = ({ children }) => {
     await recipes.addData(plat);
   }
 
+  async function updPlat(plat) {
+    await recipes.updData(plat);
+  }
+
   useEffect(() => {
     setListOfPlats(recipes.data);
   }, [recipes.data]);
 
   return (
     <PlatContext.Provider
-      value={{ listOfPlats, deletePlat: deletePlat, addPlat: addPlat }}
+      value={{
+        listOfPlats,
+        deletePlat: deletePlat,
+        addPlat: addPlat,
+        updPlat: updPlat,
+      }}
     >
       {children}
     </PlatContext.Provider>

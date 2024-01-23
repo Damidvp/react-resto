@@ -25,6 +25,7 @@ import { AuthContext } from "./utils/context/AuthContext";
 import { useContext } from "react";
 import ListePlatsAdmin from "./components/components-admin/components-admin-listeplats/ListePlatsAdmin";
 import AjoutPlatAdmin from "./components/components-admin/components-admin-ajoutplat/AjoutPlatAdmin";
+import UpdatePlatAdmin from "./components/components-admin/components-admin-updateplat/UpdatePlatAdmin";
 //import { firebaseData } from "./firebase";
 
 function App() {
@@ -76,6 +77,18 @@ function App() {
                 currentUser ? (
                   <PlatProvider>
                     <AjoutPlatAdmin />
+                  </PlatProvider>
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
+              path="/gestion/update-plat/:id"
+              element={
+                currentUser ? (
+                  <PlatProvider>
+                    <UpdatePlatAdmin />
                   </PlatProvider>
                 ) : (
                   <Navigate to="/" />

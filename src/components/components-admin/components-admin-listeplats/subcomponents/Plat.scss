@@ -5,6 +5,10 @@
   td {
     text-align: left;
     padding: 0 1em;
+    .link {
+      text-decoration: none;
+      color: rgb(61, 28, 6);
+    }
     .table-body-name {
       width: 10em;
       font-weight: bold;
@@ -22,8 +26,6 @@
       width: 5em;
     }
     .table-body-actions {
-      display: flex;
-      gap: 1em;
       button {
         border: none;
         font-size: 0.85em;

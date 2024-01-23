@@ -44,7 +44,27 @@ export function useFetchPlatData() {
     }
   };
 
-  const updData = async (platToUpd) => {};
+  const updData = async (platToUpd) => {
+    try {
+      const docRef = doc(platCollection, doc_id);
+      const docSnapshot = await getDoc(docRef);
+
+      if (docSnapshot.exists()) {
+        const existingPlats = docSnapshot.data().plats || [];
+        const platIndex = existingPlats.findIndex(
+          (p) => p.id.toString() === platToUpd.id.toString()
+        );
+        if (platIndex !== -1) {
+          platToUpd.prix = parseFloat(platToUpd.prix);
+          existingPlats[platIndex] = platToUpd;
+          await updateDoc(docRef, { plats: existingPlats });
+        }
+        fetchData();
+      }
+    } catch (e) {
+      console.error("Erreur lors du PUT : ", e);
+    }
+  };
 
   const delData = async (platToDel) => {
     try {

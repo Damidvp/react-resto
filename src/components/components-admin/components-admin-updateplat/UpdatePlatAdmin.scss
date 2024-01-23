@@ -1,0 +1,35 @@
+.updateplat-content {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 3em;
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5em;
+    .form-field {
+      display: flex;
+      justify-content: space-between;
+      gap: 2em;
+      input,
+      textarea,
+      select {
+        width: 18em;
+      }
+      textarea {
+        height: 10em;
+      }
+    }
+    button {
+      border: none;
+      padding: 0.5em;
+      font-size: 1.1em;
+      background-color: rgb(8, 105, 8);
+      color: rgb(235, 250, 237);
+      border-radius: 0.5em;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+  }
+}
