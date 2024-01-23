@@ -58,11 +58,27 @@ function App() {
             <Route path="/plan" element={<PlanSite />} />
             <Route
               path="/gestion/liste-plats"
-              element={currentUser ? <ListePlatsAdmin /> : <Navigate to="/" />}
+              element={
+                currentUser ? (
+                  <PlatProvider>
+                    <ListePlatsAdmin />
+                  </PlatProvider>
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
             />
             <Route
               path="/gestion/ajout-plat"
-              element={currentUser ? <AjoutPlatAdmin /> : <Navigate to="/" />}
+              element={
+                currentUser ? (
+                  <PlatProvider>
+                    <AjoutPlatAdmin />
+                  </PlatProvider>
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
             />
           </Routes>
           <Footer />

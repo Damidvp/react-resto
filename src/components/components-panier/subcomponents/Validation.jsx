@@ -15,7 +15,7 @@ function Validation() {
         </p>
       </div>
 
-      <img src="" alt="Livreur à chocobo" />
+      <img src="/img/chocobo.png" alt="Livreur à chocobo" />
       <div className="validation-content-destination">
         <h2>Destination</h2>
         <div className="validation-content-destination-name">

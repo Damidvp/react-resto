@@ -1,0 +1,58 @@
+tr {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+  td {
+    text-align: left;
+    padding: 0 1em;
+    .table-body-name {
+      width: 10em;
+      font-weight: bold;
+    }
+    .table-body-description {
+      width: 20em;
+    }
+    .table-body-country {
+      width: 8em;
+    }
+    .table-body-category {
+      width: 8em;
+    }
+    .table-body-actions {
+      display: flex;
+      gap: 1em;
+      button {
+        border: none;
+        font-size: 0.85em;
+        padding: 0.5em;
+        color: white;
+        border-radius: 0.5em;
+
+        transition: background-color 0.2s, color 0.2s;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      .btn-update {
+        background-color: rgb(72, 152, 226);
+      }
+      .btn-update:hover {
+        background-color: rgb(198, 234, 248);
+        color: rgb(10, 110, 192);
+      }
+      .btn-delete {
+        background-color: rgb(223, 61, 61);
+      }
+      .btn-delete:hover {
+        background-color: rgb(238, 179, 179);
+        color: rgb(172, 18, 18);
+      }
+    }
+  }
+}
+tr:nth-child(odd) {
+  background-color: antiquewhite;
+}
+tr:nth-child(even) {
+  background-color: rgb(243, 181, 65);
+}
